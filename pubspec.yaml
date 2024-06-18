@@ -40,6 +40,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   table_calendar: ^3.1.1
+  image_picker: ^0.8.4+3
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -65,6 +66,7 @@ flutter:
     - image/bawah.png
     - image/LOGO.png
     - image/Batik.png
+    - image/batikheader.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

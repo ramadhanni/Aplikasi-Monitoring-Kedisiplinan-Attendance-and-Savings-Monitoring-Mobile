@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SchoolPage extends StatefulWidget {
+  const SchoolPage({super.key});
+
   @override
   _SchoolPage createState() => _SchoolPage();
 }
@@ -63,7 +65,7 @@ class _SchoolPage extends State<SchoolPage> {
   Widget summaryCash() {
     return Container(
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 0, 73, 66),
+        color: const Color.fromARGB(255, 0, 73, 66),
         borderRadius: BorderRadius.circular(15),
       ),
       child: Column(
@@ -74,22 +76,22 @@ class _SchoolPage extends State<SchoolPage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(
-                  icon: Icon(Icons.arrow_back_ios, color: Colors.white),
+                  icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
                   onPressed: () {
                     setState(() {
-                      selectedDate = selectedDate.subtract(Duration(days: 1));
+                      selectedDate = selectedDate.subtract(const Duration(days: 1));
                     });
                   },
                 ),
                 Text(
                   '${selectedDate.day} ${_monthName(selectedDate.month)}',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
+                  style: const TextStyle(color: Colors.white, fontSize: 20),
                 ),
                 IconButton(
-                  icon: Icon(Icons.arrow_forward_ios, color: Colors.white),
+                  icon: const Icon(Icons.arrow_forward_ios, color: Colors.white),
                   onPressed: () {
                     setState(() {
-                      selectedDate = selectedDate.add(Duration(days: 1));
+                      selectedDate = selectedDate.add(const Duration(days: 1));
                     });
                   },
                 ),
@@ -111,7 +113,7 @@ class _SchoolPage extends State<SchoolPage> {
                       });
                     },
                     child: Container(
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       decoration: BoxDecoration(
                         color: date.day == selectedDate.day
                             ? Colors.teal.shade700
@@ -161,9 +163,9 @@ class _SchoolPage extends State<SchoolPage> {
             right: 20,
             child: summaryCash(),
           ),
-          Padding(
+          const Padding(
             padding:
-                const EdgeInsets.only(top: 350.0, bottom: 300.0, left: 10.0),
+                EdgeInsets.only(top: 350.0, bottom: 300.0, left: 10.0),
             child: Text(
               "Your Attendance",
               style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
@@ -179,7 +181,7 @@ Widget backgroundHeader() {
   return Container(
     height: 300,
     width: double.infinity,
-    decoration: BoxDecoration(
+    decoration: const BoxDecoration(
       // image: DecorationImage(
       //     image: AssetImage('image/Batik.png'), fit: BoxFit.cover),
       color: Colors.teal,
@@ -194,7 +196,7 @@ Widget backgroundHeader() {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Row(
+          const Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CircleAvatar(
@@ -227,11 +229,11 @@ Widget backgroundHeader() {
           Container(
             width: 35,
             height: 35,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.white,
               shape: BoxShape.circle,
             ),
-            child: Center(
+            child: const Center(
               child: Icon(
                 Icons.notifications,
                 color: Colors.black54,

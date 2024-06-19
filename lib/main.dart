@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:monitoring_attandacensavings/home.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: const LoginScreen(),
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
@@ -19,6 +21,8 @@ class MyApp extends StatelessWidget {
 }
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
@@ -36,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 Expanded(
                   flex: 3,
                   child: Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(
                             'image/atas.png'), // Gambar background atas
@@ -54,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 Expanded(
                   flex: 2,
                   child: Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(
                             'image/bawah.png'), // Gambar background bawah
@@ -79,11 +83,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       'image/LOGO.png',
                       height: 100,
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     // Welcome Text
                     RichText(
                       textAlign: TextAlign.center,
-                      text: TextSpan(
+                      text: const TextSpan(
                         children: [
                           TextSpan(
                             text: 'Selamat Datang\ndi ',
@@ -103,7 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ],
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     // Email Field
                     TextField(
                       decoration: InputDecoration(
@@ -114,28 +118,28 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     // Password Field
                     TextField(
                       obscureText: true,
                       decoration: InputDecoration(
                         labelText: 'Kata sandi',
-                        suffixIcon: Icon(Icons.visibility),
+                        suffixIcon: const Icon(Icons.visibility),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
                       ),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     // Forgot Password
                     Align(
                       alignment: Alignment.centerRight,
                       child: TextButton(
                         onPressed: () {},
-                        child: Text('Lupa password?'),
+                        child: const Text('Lupa password?'),
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     // Login Button
                     SizedBox(
                       width: double.infinity,
@@ -146,17 +150,17 @@ class _LoginScreenState extends State<LoginScreen> {
                             context,
                             MaterialPageRoute(builder: (context) {
                               print("Navigasi ke halaman HomePage");
-                              return HomePage();
+                              return const HomePage();
                             }),
                           );
                         },
-                        child: Text('Masuk'),
                         style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(vertical: 16),
+                          padding: const EdgeInsets.symmetric(vertical: 16),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),
                         ),
+                        child: const Text('Masuk'),
                       ),
                     ),
                   ],

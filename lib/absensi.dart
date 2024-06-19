@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 // import 'package:table_calendar/table_calendar.dart';
 
 class BusinessPage extends StatefulWidget {
+  const BusinessPage({super.key});
+
   @override
   _BusinessPage createState() => _BusinessPage();
 }
@@ -17,12 +19,12 @@ class _BusinessPage extends State<BusinessPage> {
         backgroundColor: Colors.teal,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {},
         ),
-        actions: [
+        actions: const [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: CircleAvatar(
               backgroundImage: AssetImage(
                   'image/Batik.png'), // Update with your profile image asset
@@ -42,24 +44,24 @@ class _BusinessPage extends State<BusinessPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       IconButton(
-                        icon: Icon(Icons.arrow_back_ios, color: Colors.white),
+                        icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
                         onPressed: () {
                           setState(() {
                             selectedDate =
-                                selectedDate.subtract(Duration(days: 1));
+                                selectedDate.subtract(const Duration(days: 1));
                           });
                         },
                       ),
                       Text(
                         '${selectedDate.day} ${_monthName(selectedDate.month)}',
-                        style: TextStyle(color: Colors.white, fontSize: 20),
+                        style: const TextStyle(color: Colors.white, fontSize: 20),
                       ),
                       IconButton(
                         icon:
-                            Icon(Icons.arrow_forward_ios, color: Colors.white),
+                            const Icon(Icons.arrow_forward_ios, color: Colors.white),
                         onPressed: () {
                           setState(() {
-                            selectedDate = selectedDate.add(Duration(days: 1));
+                            selectedDate = selectedDate.add(const Duration(days: 1));
                           });
                         },
                       ),
@@ -80,7 +82,7 @@ class _BusinessPage extends State<BusinessPage> {
                           });
                         },
                         child: Container(
-                          padding: EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(8.0),
                           decoration: BoxDecoration(
                             color: date.day == selectedDate.day
                                 ? Colors.white
@@ -117,7 +119,7 @@ class _BusinessPage extends State<BusinessPage> {
           ),
           Expanded(
             child: ListView(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               children: [
                 _buildAttendanceCard('25 Selasa', '06:45', 'Ongoing', true),
                 _buildAttendanceCard('24 Senin', '06:45', '12:01', false),
@@ -153,7 +155,7 @@ class _BusinessPage extends State<BusinessPage> {
   Widget _buildAttendanceCard(
       String day, String checkIn, String checkOut, bool isOngoing) {
     return Card(
-      margin: EdgeInsets.symmetric(vertical: 8.0),
+      margin: const EdgeInsets.symmetric(vertical: 8.0),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -163,47 +165,47 @@ class _BusinessPage extends State<BusinessPage> {
               children: [
                 Text(day,
                     style:
-                        TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                Spacer(),
+                        const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                const Spacer(),
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                  padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
                   decoration: BoxDecoration(
                     color: Colors.teal,
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  child: Text(
+                  child: const Text(
                     'Detail',
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
-                SizedBox(width: 8),
+                const SizedBox(width: 8),
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                  padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
                   decoration: BoxDecoration(
                     color: Colors.teal,
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
                     isOngoing ? 'Form Izin' : 'Bukti Izin',
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                   ),
                 ),
               ],
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   children: [
-                    Text('Check-in: ',
+                    const Text('Check-in: ',
                         style: TextStyle(fontWeight: FontWeight.bold)),
                     Text(checkIn),
                   ],
                 ),
                 Row(
                   children: [
-                    Text('Check-out: ',
+                    const Text('Check-out: ',
                         style: TextStyle(fontWeight: FontWeight.bold)),
                     Text(checkOut),
                   ],

@@ -4,6 +4,8 @@ import 'package:monitoring_attandacensavings/tabungan.dart';
 import 'package:monitoring_attandacensavings/profile.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -19,10 +21,10 @@ class _HomePageState extends State<HomePage> {
 
   // Daftar halaman yang akan ditampilkan
   final List<Widget> _pages = [
-    Home(),
-    BusinessPage(),
-    Tabungan(),
-    Profile(),
+    const Home(),
+    const BusinessPage(),
+    const Tabungan(),
+    const Profile(),
   ];
 
   @override
@@ -59,6 +61,8 @@ class _HomePageState extends State<HomePage> {
 
 // Halaman Home
 class Home extends StatelessWidget {
+  const Home({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -96,7 +100,7 @@ class Home extends StatelessWidget {
     return Container(
       height: 300,
       width: double.infinity,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.teal,
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(30),
@@ -143,11 +147,11 @@ class Home extends StatelessWidget {
             Container(
               width: 35,
               height: 35,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
                 shape: BoxShape.circle,
               ),
-              child: Center(
+              child: const Center(
                 child: Icon(
                   Icons.notifications,
                   color: Colors.black54,
@@ -166,14 +170,14 @@ class Home extends StatelessWidget {
       width: double.infinity,
       height: 140,
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 255, 255, 255),
+        color: const Color.fromARGB(255, 255, 255, 255),
         borderRadius: BorderRadius.circular(30),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.3),
             spreadRadius: 2,
             blurRadius: 5,
-            offset: Offset(0, 2.5),
+            offset: const Offset(0, 2.5),
           )
         ],
       ),
@@ -194,20 +198,20 @@ class Home extends StatelessWidget {
                         height: 30,
                         color: Colors.blueGrey,
                       ),
-                      SizedBox(width: 5),
-                      Text(
+                      const SizedBox(width: 5),
+                      const Text(
                         "Rp. 2.800.000",
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       )
                     ],
                   ),
-                  Text("Saldo Tabungan Anda"),
+                  const Text("Saldo Tabungan Anda"),
                 ],
               ),
             ),
           ),
-          VerticalDivider(
+          const VerticalDivider(
             color: Colors.black54,
             thickness: 3,
           ),
@@ -217,11 +221,11 @@ class Home extends StatelessWidget {
               padding: const EdgeInsets.only(top: 15.0),
               child: Column(
                 children: <Widget>[
-                  Text(
+                  const Text(
                     "Status",
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Container(
                     width: 50,
                     height: 50,
@@ -230,10 +234,10 @@ class Home extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Text(
+                  const Text(
                     "Keterangan",
                   ),
                 ],
@@ -247,10 +251,10 @@ class Home extends StatelessWidget {
 
   Widget bottomBox() {
     return Container(
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       width: 75,
       height: 75,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.blue,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(15),
@@ -259,7 +263,7 @@ class Home extends StatelessWidget {
           bottomRight: Radius.circular(15),
         ),
       ),
-      child: Center(
+      child: const Center(
         child: Text(
           "Bottom Box",
           style: TextStyle(color: Colors.white),
@@ -281,7 +285,7 @@ class Home extends StatelessWidget {
             color: Colors.black.withOpacity(0.3),
             spreadRadius: 2,
             blurRadius: 5,
-            offset: Offset(0, 2.5),
+            offset: const Offset(0, 2.5),
           ),
         ],
       ),
@@ -290,9 +294,9 @@ class Home extends StatelessWidget {
           Container(
             width: 80,
             height: 80,
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              image: DecorationImage(
+              image: const DecorationImage(
                 image: AssetImage(
                     'image/Batik.png'), // Ganti dengan path gambar Anda
                 fit: BoxFit.cover,
@@ -300,9 +304,9 @@ class Home extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
           ),
-          Expanded(
+          const Expanded(
             child: Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(10.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,

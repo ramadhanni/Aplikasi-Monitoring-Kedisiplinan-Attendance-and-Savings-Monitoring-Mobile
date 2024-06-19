@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:monitoring_attandacensavings/absensi.dart';
 import 'package:monitoring_attandacensavings/school.dart';
+import 'package:monitoring_attandacensavings/tabungan.dart';
 import 'package:monitoring_attandacensavings/profile.dart';
 
 class HomePage extends StatefulWidget {
@@ -21,8 +22,10 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> _pages = [
     Home(),
     BusinessPage(),
-    SchoolPage(),
+    // SchoolPage(),
     // ProfilePage(),
+    Tabungan(),
+    Profile(),
   ];
 
   @override
@@ -41,8 +44,8 @@ class _HomePageState extends State<HomePage> {
             label: 'Absensi',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
+            icon: Icon(Icons.account_balance_wallet),
+            label: 'Tabungan',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),

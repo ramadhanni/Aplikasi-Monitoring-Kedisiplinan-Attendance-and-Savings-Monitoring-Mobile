@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:monitoring_attandacensavings/absensi.dart';
 import 'package:monitoring_attandacensavings/school.dart';
+import 'package:monitoring_attandacensavings/profile.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -21,7 +22,7 @@ class _HomePageState extends State<HomePage> {
     Home(),
     BusinessPage(),
     SchoolPage(),
-    ProfilePage(),
+    // ProfilePage(),
   ];
 
   @override
@@ -359,14 +360,14 @@ class Home extends StatelessWidget {
 // }
 
 // Halaman Profile
-class ProfilePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'Profile Page',
-        style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-      ),
-    );
-  }
-}
+// class ProfilePage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Center(
+//       child: Text(
+//         'Profile Page',
+//         style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+//       ),
+//     );
+//   }
+// }

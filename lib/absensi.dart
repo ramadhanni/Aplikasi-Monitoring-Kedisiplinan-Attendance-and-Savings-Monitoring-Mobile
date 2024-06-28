@@ -26,22 +26,22 @@ class _BusinessPage extends State<BusinessPage> {
           AttendanceList(),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.assignment),
-            label: 'Attendance',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
-      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   items: [
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.home),
+      //       label: 'Home',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.assignment),
+      //       label: 'Attendance',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.person),
+      //       label: 'Profile',
+      //     ),
+      //   ],
+      // ),
     );
   }
 }
@@ -206,6 +206,10 @@ class AttendanceItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> parts = date.split(' ');
+    String tanggal = parts[0];
+    String hari = parts[1];
+
     return Card(
       margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: Padding(
@@ -213,17 +217,124 @@ class AttendanceItem extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(date),
-            Column(
+            Container(
+              padding: EdgeInsets.all(10),
+              width: 80,
+              decoration: BoxDecoration(
+                  color: Colors.teal,
+                  borderRadius: BorderRadius.all(Radius.circular(14))),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    tanggal,
+                    style: TextStyle(fontSize: 23, fontWeight: FontWeight.w500),
+                  ),
+                  Text(
+                    hari,
+                    style: TextStyle(fontWeight: FontWeight.w400),
+                  )
+                ],
+              ),
+            ),
+            Row(
               children: [
-                Text('Check-in: $checkin'),
-                Text('Check-out: $checkout'),
+                Container(
+                  height: 60,
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(12),
+                      bottomLeft: Radius.circular(12)
+                    ),
+                    color: Colors.white
+                  ),
+                  child: Column(
+                    children: [
+                      Text('$checkin'),
+                      Text('Check-in',style: TextStyle(fontSize: 8),),
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 60,
+                  padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(12),
+                        bottomRight: Radius.circular(12)
+                      ),
+                      color: Colors.teal
+                    ),
+                  child:Center(
+                    child: 
+                    Text('Detail',style: TextStyle(fontSize: 8, fontWeight: FontWeight.bold)),
+                  )
+                ),
+                SizedBox(width: 10,),
+                Container(
+                  height: 60,
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(12),
+                      bottomLeft: Radius.circular(12)
+                    ),
+                    color: Colors.white
+                  ),
+                  child: Column(
+                    children: [
+                      Text('$checkout'),
+                      Text('Check-out',style: TextStyle(fontSize: 8),),
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 60,
+                  padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(12),
+                        bottomRight: Radius.circular(12)
+                      ),
+                      color: Colors.teal
+                    ),
+                  child:Center(
+                    child: 
+                    Text('Detail',style: TextStyle(fontSize: 8, fontWeight: FontWeight.bold)),
+                  )
+                ),
               ],
             ),
-            ElevatedButton(
-              onPressed: () => _popupDetail(context),
-              child: Text('Detail'),
+            Container(
+              padding: EdgeInsets.all(10),
+              width: 50,
+              height: 60,
+              decoration: BoxDecoration(
+                  color: Colors.teal,
+                  borderRadius: BorderRadius.all(Radius.circular(10))),
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center, 
+                  crossAxisAlignment: CrossAxisAlignment.center, 
+                children :[ 
+                  Text(
+                    "Bukti Ijin",
+                    style: TextStyle(fontSize: 8, fontWeight: FontWeight.w500),
+                  )
+                ]
+              ),
             ),
+            
+            // Column(
+            //   children: [
+            //     Text('Check-in: $checkin'),
+            //     Text('Check-out: $checkout'),
+            //   ],
+            // ),
+            // ElevatedButton(
+            //   onPressed: () => _popupDetail(context),
+            //   child: Text('Detail'),
+            // ),
           ],
         ),
       ),
@@ -282,4 +393,3 @@ class AttendanceItem extends StatelessWidget {
     );
   }
 }
-

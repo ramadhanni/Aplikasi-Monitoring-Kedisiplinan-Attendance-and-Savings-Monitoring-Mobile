@@ -204,10 +204,10 @@ Widget jumBulan() {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
+                const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
+                    Text(
                       'Bulan ini',
                       style: TextStyle(
                         fontSize: 14,
@@ -215,8 +215,8 @@ Widget jumBulan() {
                         fontWeight: FontWeight.w300,
                       ),
                     ),
-                    const SizedBox(height: 3),
-                    const Text(
+                    SizedBox(height: 3),
+                    Text(
                       'Rp. 1.000.000',
                       style: TextStyle(
                         color: Color.fromARGB(255, 86, 86, 86),

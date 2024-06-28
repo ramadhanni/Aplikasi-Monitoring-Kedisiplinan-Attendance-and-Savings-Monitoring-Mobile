@@ -114,7 +114,7 @@ Widget input(File? image, Future<void> Function() pickImage) {
                             backgroundImage: FileImage(image),
                           ),
                   ),
-                  TextField(
+                  const TextField(
                     maxLines: 7,
                     decoration: InputDecoration(
                       border: InputBorder.none,

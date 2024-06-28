@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:monitoring_attandacensavings/absensi.dart';
+import 'package:monitoring_attandacensavings/school.dart';
 import 'package:monitoring_attandacensavings/tabungan.dart';
 import 'package:monitoring_attandacensavings/profile.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
-
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -21,10 +20,12 @@ class _HomePageState extends State<HomePage> {
 
   // Daftar halaman yang akan ditampilkan
   final List<Widget> _pages = [
-    const Home(),
-    const BusinessPage(),
-    const Tabungan(),
-    const Profile(),
+    Home(),
+    BusinessPage(),
+    // SchoolPage(),
+    // ProfilePage(),
+    Tabungan(),
+    Profile(),
   ];
 
   @override
@@ -61,8 +62,6 @@ class _HomePageState extends State<HomePage> {
 
 // Halaman Home
 class Home extends StatelessWidget {
-  const Home({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -100,7 +99,7 @@ class Home extends StatelessWidget {
     return Container(
       height: 300,
       width: double.infinity,
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         color: Colors.teal,
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(30),
@@ -147,11 +146,11 @@ class Home extends StatelessWidget {
             Container(
               width: 35,
               height: 35,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 color: Colors.white,
                 shape: BoxShape.circle,
               ),
-              child: const Center(
+              child: Center(
                 child: Icon(
                   Icons.notifications,
                   color: Colors.black54,
@@ -170,14 +169,14 @@ class Home extends StatelessWidget {
       width: double.infinity,
       height: 140,
       decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 255, 255, 255),
+        color: Color.fromARGB(255, 255, 255, 255),
         borderRadius: BorderRadius.circular(30),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.3),
             spreadRadius: 2,
             blurRadius: 5,
-            offset: const Offset(0, 2.5),
+            offset: Offset(0, 2.5),
           )
         ],
       ),
@@ -198,20 +197,20 @@ class Home extends StatelessWidget {
                         height: 30,
                         color: Colors.blueGrey,
                       ),
-                      const SizedBox(width: 5),
-                      const Text(
+                      SizedBox(width: 5),
+                      Text(
                         "Rp. 2.800.000",
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       )
                     ],
                   ),
-                  const Text("Saldo Tabungan Anda"),
+                  Text("Saldo Tabungan Anda"),
                 ],
               ),
             ),
           ),
-          const VerticalDivider(
+          VerticalDivider(
             color: Colors.black54,
             thickness: 3,
           ),
@@ -221,11 +220,11 @@ class Home extends StatelessWidget {
               padding: const EdgeInsets.only(top: 15.0),
               child: Column(
                 children: <Widget>[
-                  const Text(
+                  Text(
                     "Status",
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10),
                   Container(
                     width: 50,
                     height: 50,
@@ -234,10 +233,10 @@ class Home extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: 10,
                   ),
-                  const Text(
+                  Text(
                     "Keterangan",
                   ),
                 ],
@@ -251,10 +250,10 @@ class Home extends StatelessWidget {
 
   Widget bottomBox() {
     return Container(
-      margin: const EdgeInsets.all(10),
+      margin: EdgeInsets.all(10),
       width: 75,
       height: 75,
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         color: Colors.blue,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(15),
@@ -263,7 +262,7 @@ class Home extends StatelessWidget {
           bottomRight: Radius.circular(15),
         ),
       ),
-      child: const Center(
+      child: Center(
         child: Text(
           "Bottom Box",
           style: TextStyle(color: Colors.white),
@@ -285,7 +284,7 @@ class Home extends StatelessWidget {
             color: Colors.black.withOpacity(0.3),
             spreadRadius: 2,
             blurRadius: 5,
-            offset: const Offset(0, 2.5),
+            offset: Offset(0, 2.5),
           ),
         ],
       ),
@@ -294,9 +293,9 @@ class Home extends StatelessWidget {
           Container(
             width: 80,
             height: 80,
-            margin: const EdgeInsets.all(10),
+            margin: EdgeInsets.all(10),
             decoration: BoxDecoration(
-              image: const DecorationImage(
+              image: DecorationImage(
                 image: AssetImage(
                     'image/Batik.png'), // Ganti dengan path gambar Anda
                 fit: BoxFit.cover,
@@ -304,9 +303,9 @@ class Home extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
           ),
-          const Expanded(
+          Expanded(
             child: Padding(
-              padding: EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,

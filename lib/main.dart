@@ -34,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
   String _passwordErrorText = '';
 
   Future<String> login(String username, String password) async {
-    String url = 'http://192.168.137.1/api_proyek3/Config-mobile/login.php';
+    String url = 'http://192.168.0.101/api_proyek3/Config-mobile/login.php';
     try {
       final response = await http.post(Uri.parse(url), body: {
         "username": username,
